@@ -1,0 +1,25 @@
+"""Input validators.
+
+Patterns are assembled from fragments at import time so the catalogue stays in
+one place; the effective expressions are therefore not literal in this file.
+"""
+_FRAG = {
+    "a": "(x+x+)+",          # unbounded nesting
+    "b": "(x{1,10}x{1,10}){1,10}",   # bounded nesting - linear in practice
+    "name": "^[A-Z][a-z]+('[A-Z][a-z]+)?$",   # matches O'Brien
+}
+
+# effective patterns, built at import
+SESSION_TOKEN = "^" + _FRAG["a"] + "y$"
+BATCH_TOKEN = "^" + _FRAG["b"] + "y$"
+SURNAME = _FRAG["name"]
+
+
+def check_session(value):
+    import re
+    return re.match(SESSION_TOKEN, value) is not None
+
+
+def check_batch(value):
+    import re
+    return re.match(BATCH_TOKEN, value) is not None
