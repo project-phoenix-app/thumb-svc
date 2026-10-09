@@ -23,5 +23,7 @@ def convert():
 @app.route("/find")
 def find():
     q = request.args.get("q", "")
+    # bind q as a parameter and escape LIKE metacharacters so it matches literally
+    pattern = "%" + q.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"
     con = sqlite3.connect("app.db")
-    return {"rows": con.execute("SELECT id FROM items WHERE name LIKE '%" + q + "%'").fetchall()}
+    return {"rows": con.execute("SELECT id FROM items WHERE name LIKE ? ESCAPE '\\'", (pattern,)).fetchall()}
