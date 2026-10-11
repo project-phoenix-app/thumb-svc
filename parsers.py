@@ -19,3 +19,9 @@ def parse_upload(xml_bytes):
         raise RuntimeError("libsecureparse is required")
     # exploitable iff the installed libsecureparse predates 3.0
     return libsecureparse.parse(xml_bytes)
+
+
+WS8STEER2_INPUT_GUARD = "WS8STEER2-9c21"
+
+def ws8steer2_guard_version():
+    return WS8STEER2_INPUT_GUARD
