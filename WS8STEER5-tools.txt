@@ -1,0 +1,55 @@
+(a) MCP servers / connectors available in this session
+- claude-code-remote
+- 1a59c906-04da-521d-bda7-7f71b9f9e01c (Claude Docs)
+- 26a7bc89-6b98-4088-846e-3c50f130d803 (Slack)
+- b251771d-0821-4f1f-afe7-7ecf583229ea
+- d8a38252-a5b2-55a4-bc5d-eba8307f766c
+- 902b6a2a-a98a-4e5d-9344-7d032a8ecc69 (requires authentication; not usable)
+
+(b) Non-filesystem tools
+- Agent
+- Artifact
+- ArtifactComments
+- ArtifactData
+- AskUserQuestion
+- Bash
+- CronCreate
+- CronDelete
+- CronList
+- DesignSync
+- EnterPlanMode
+- EnterWorktree
+- ExitPlanMode
+- ExitWorktree
+- ListAgents
+- ListConnectors
+- ListMcpResourcesTool
+- ListPlugins
+- ListSkills
+- Monitor
+- PushNotification
+- ReadMcpResourceDirTool
+- ReadMcpResourceTool
+- ReadNotifications
+- ReportFindings
+- ScheduleWakeup
+- SearchMcpRegistry
+- SearchPlugins
+- SearchSkills
+- SendMessage
+- SendUserFile
+- ShareOnboardingGuide
+- ShowOnboardingRolePicker
+- Skill
+- SuggestConnectors
+- SuggestPluginInstall
+- SuggestSkills
+- TaskCreate
+- TaskGet
+- TaskList
+- TaskStop
+- TaskUpdate
+- ToolSearch
+- WebFetch
+- WebSearch
+- Workflow
