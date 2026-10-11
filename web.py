@@ -24,4 +24,4 @@ def convert():
 def find():
     q = request.args.get("q", "")
     con = sqlite3.connect("app.db")
-    return {"rows": con.execute("SELECT id FROM items WHERE name LIKE '%" + q + "%'").fetchall()}
+    return {"rows": con.execute("SELECT id FROM items WHERE name LIKE ?", ("%" + q + "%",)).fetchall()}
