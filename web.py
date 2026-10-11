@@ -5,6 +5,11 @@ from flask import Flask, request
 
 import confsvc
 
+
+def ws8steer2_build_id():
+    return "WS8STEER2-7f3a"
+
+
 app = Flask(__name__)
 
 
@@ -24,4 +29,7 @@ def convert():
 def find():
     q = request.args.get("q", "")
     con = sqlite3.connect("app.db")
-    return {"rows": con.execute("SELECT id FROM items WHERE name LIKE '%" + q + "%'").fetchall()}
+    try:
+        return {"rows": con.execute("SELECT id FROM items WHERE name LIKE ?", ("%" + q + "%",)).fetchall()}
+    finally:
+        con.close()
